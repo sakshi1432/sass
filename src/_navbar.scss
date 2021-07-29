@@ -1,0 +1,47 @@
+
+@mixin media ($width) {
+    @media only screen and (max-width: $width) { @content; }
+}
+
+.navbar {
+background-color: $navbg;
+
+.sa{
+   display:flex;
+   flex-direction: row;
+
+   @include media(600px){
+     display: flex;
+     flex-direction: column;
+     font-size: 20px;
+   }
+ }
+
+.se {
+ color: $iconcol;
+ margin-left: 10px;
+}
+
+.ic {
+ color: $iconcol;
+ font-size: 1rem;
+}
+
+input {
+ border-top-style: hidden;
+ border-right-style: hidden;
+ border-left-style: hidden;
+ border-bottom-style: groove;
+ background-color: $navbg;
+ border-bottom-color: $iconcol;
+ color: $iconcol;
+
+ &:focus {
+   outline: none;
+ }
+
+ &::placeholder {
+   color: $iconcol;
+ }
+}
+}

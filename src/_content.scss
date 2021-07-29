@@ -1,0 +1,109 @@
+@import "variable";
+
+@mixin mad ($width){
+    @media only screen and (max-width: $width) { @content; }
+}
+
+.con {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: auto auto;
+
+  .card{
+      width: 35rem;
+      @include mad(1210px){
+          width:18rem;
+      }
+  }
+
+  .card-img-top {
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .mid {
+    margin-top: -160px;
+    padding: 10px;
+    width: 40%;
+
+    .o {
+      height: 100px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+  .card-text {
+    margin-top: 10px;
+        @include mad(1210px){
+            font-size: 15px;
+        }
+        .bt{
+            @include mad(1210px){
+                max-width: 100px;
+                min-width: 100px;
+                font-size: 10px;
+                max-height: 30px;
+                min-height: 30px;
+            }
+        }
+
+    .f {
+      display: flex;
+      justify-content: space-around;
+    }
+  }
+
+  .two {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: center;
+
+    .u {
+      width: 35%;
+      height: 100px;
+
+      @include mad(1040px){
+          width:30%;
+          
+      }
+
+      .p {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        @include mad(1040px){
+            width:100%;
+            height: 100%;
+            
+        }
+    
+      }
+    }
+    .ut {
+      width: 40%;
+      height: 100px;
+
+      @include mad(1040px){
+          width: 45%;
+      }
+
+      h4{
+      @include mad(1109px){
+          font-size:15px ;
+        }
+       }
+
+       span{
+        @include mad(1109px){
+            font-size:15px ;
+          }
+          @include mad(681px){
+              font-size: 10px;
+          }
+       }
+    }
+  }
+}
